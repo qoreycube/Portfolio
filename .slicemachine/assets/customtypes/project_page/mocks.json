@@ -1,0 +1,22 @@
+{
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "adult",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "In ea magna aliquip tempor sint nisi. Aute minim sunt ullamco eiusmod sit. Exercitation dolor exercitation id tempor reprehenderit amet duis nostrud cillum do."
+        }
+      }
+    ]
+  },
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "cry"
+  }
+}

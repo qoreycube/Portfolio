@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white {
+  @apply pt-0 md:pt-0;
+}
+
+.PrimaryCTA {
+  background-color: white;
+  border-radius: 50%;
+  padding: 8px;
+  background-image: url(/static/css/external_website.png) ;
+  background-size: cover;
+  width: 48px;
+  height: 48px;
+  display: block;
+} 
+.PrimaryCTA:hover {
+    background-color:gray;
+}
+.visually-hidden {
+  visibility:hidden;
+  display:none;
+}
