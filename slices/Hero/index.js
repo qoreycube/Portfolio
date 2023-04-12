@@ -24,7 +24,6 @@ const HeroContainer = styled.div`
   }
 `;
 
-
 const TypewriterContainer = styled.div`
   text-align: center;
   width: 100%;

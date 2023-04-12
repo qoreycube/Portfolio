@@ -88,7 +88,12 @@
         "items": {}
       }
     },
-    "RelatedTechnologies": {}
+    "RelatedTechnologies": {},
+    "ProjectList": {
+      "default": {
+        "items": {}
+      }
+    }
   },
   "_cts": {
     "page": {
