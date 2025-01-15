@@ -96,7 +96,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HeroSlice | QuoteSlice | TextSlice | ImageSlice | ImageCardsSlice | TextWithImageSlice | ProjectSlice;
+type PageDocumentDataSlicesSlice = HeroSlice | QuoteSlice | TextSlice | ImageSlice | ImageCardsSlice | TextWithImageSlice | ProjectSlice | RelatedTechnologiesSlice | ResumeSlice;
 /**
  * Page document from Prismic
  *
@@ -609,6 +609,55 @@ type RelatedTechnologiesSliceVariation = RelatedTechnologiesSliceDefault;
  */
 export type RelatedTechnologiesSlice = prismicT.SharedSlice<"related_technologies", RelatedTechnologiesSliceVariation>;
 /**
+ * Primary content in Resume → Primary
+ *
+ */
+interface ResumeSliceDefaultPrimary {
+    /**
+     * Title field in *Resume → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: resume.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Resume → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: resume.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Resume Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Resume`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ResumeSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ResumeSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Resume*
+ *
+ */
+type ResumeSliceVariation = ResumeSliceDefault;
+/**
+ * Resume Shared Slice
+ *
+ * - **API ID**: `resume`
+ * - **Description**: `Resume`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ResumeSlice = prismicT.SharedSlice<"resume", ResumeSliceVariation>;
+/**
  * Primary content in Text → Primary
  *
  */
@@ -781,6 +830,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectPageDocumentData, ProjectPageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceBannerPrimary, ImageSliceBanner, ImageSliceVariation, ImageSlice, ImageCardsSliceDefaultPrimary, ImageCardsSliceDefaultItem, ImageCardsSliceDefault, ImageCardsSliceVariation, ImageCardsSlice, ProjectSliceDefaultPrimary, ProjectSliceDefaultItem, ProjectSliceDefault, ProjectSliceVariation, ProjectSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, RelatedTechnologiesSliceDefaultPrimary, RelatedTechnologiesSliceDefault, RelatedTechnologiesSliceVariation, RelatedTechnologiesSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceTwoColumnsPrimary, TextSliceTwoColumns, TextSliceVariation, TextSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceWithButtonPrimary, TextWithImageSliceWithButton, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectPageDocumentData, ProjectPageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceBannerPrimary, ImageSliceBanner, ImageSliceVariation, ImageSlice, ImageCardsSliceDefaultPrimary, ImageCardsSliceDefaultItem, ImageCardsSliceDefault, ImageCardsSliceVariation, ImageCardsSlice, ProjectSliceDefaultPrimary, ProjectSliceDefaultItem, ProjectSliceDefault, ProjectSliceVariation, ProjectSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, RelatedTechnologiesSliceDefaultPrimary, RelatedTechnologiesSliceDefault, RelatedTechnologiesSliceVariation, RelatedTechnologiesSlice, ResumeSliceDefaultPrimary, ResumeSliceDefault, ResumeSliceVariation, ResumeSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceTwoColumnsPrimary, TextSliceTwoColumns, TextSliceVariation, TextSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceWithButtonPrimary, TextWithImageSliceWithButton, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }

@@ -89,11 +89,15 @@
       }
     },
     "RelatedTechnologies": {},
+<<<<<<< Updated upstream
     "ProjectList": {
       "default": {
         "items": {}
       }
     }
+=======
+    "Resume": {}
+>>>>>>> Stashed changes
   },
   "_cts": {
     "page": {

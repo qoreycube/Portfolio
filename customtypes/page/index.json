@@ -56,6 +56,12 @@
             },
             "project": {
               "type": "SharedSlice"
+            },
+            "related_technologies": {
+              "type": "SharedSlice"
+            },
+            "resume": {
+              "type": "SharedSlice"
             }
           }
         }
